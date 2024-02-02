@@ -2,7 +2,7 @@
 # See https://pre-commit.com/hooks.html for more hooks
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: main
+    rev: v4.5.0
     hooks:
       - id: trailing-whitespace
       - id: end-of-file-fixer
@@ -15,21 +15,9 @@ repos:
       - id: check-merge-conflict
       - id: check-symlinks
 
-  - repo: https://github.com/psf/black
-    rev: main
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.2.0
     hooks:
-      - id: black
-
-#  - repo: https://github.com/pre-commit/mirrors-autopep8
-#    rev: main
-#    hooks:
-#      - id: autopep8
-
-#  - repo: https://github.com/jazzband/pip-tools
-#    rev: main
-#    hooks:
-#      - id: pip-compile
-#        files: setup.cfg
-#        args: ["--extra=all"]
-#        # files: ^requirements/production\.(in|txt)$
-#        # args: [--index-url=https://example.com, requirements/production.in]
+      - id: ruff
+        args: [ --fix ]
+      - id: ruff-format

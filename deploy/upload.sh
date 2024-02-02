@@ -6,7 +6,7 @@ ROOT="${DIR}/.."
 pushd $ROOT
 
 rm -f $ROOT/dist/*
-python ./setup.py bdist_wheel
+python -m build --wheel
 twine upload --repository gitlab --skip-existing dist/*.whl
 
 popd
