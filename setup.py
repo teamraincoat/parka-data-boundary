@@ -1,8 +1,9 @@
 #!/usr/bin/env python
 
-from setuptools import setup
 import glob
 from pathlib import Path
+
+from setuptools import setup
 
 
 def data_files(target, srcglb):
