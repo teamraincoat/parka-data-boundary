@@ -1,3 +1,10 @@
+
+# Misc
+.python-version
+.claude/settings.local.json
+output/*
+tmp/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
