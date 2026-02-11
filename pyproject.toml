@@ -22,6 +22,9 @@ keywords = ["raincoat", "parka", "data", "boundary"]
 
 [project.optional-dependencies]
 dev = []
+ci = [
+    "pytest",
+]
 all = ["parka-data-boundary[dev]"]
 
 [tool.pytest.ini_options]
