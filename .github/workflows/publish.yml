@@ -6,7 +6,7 @@ on:
   workflow_run:
     workflows: ["CI"]
     types: [completed]
-    branches: [develop, main]
+    branches: [main]
 
 jobs:
   build:
@@ -60,20 +60,3 @@ jobs:
           TWINE_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
           TWINE_REPOSITORY_URL: https://pypi.raincoat.dev/ghcr.io/teamraincoat/
         run: twine upload --skip-existing dist/*
-
-  cleanup:
-    name: Clean up old dev versions
-    needs: publish
-    if: github.event.workflow_run.head_branch == 'develop'
-    runs-on: ubuntu-latest
-    permissions:
-      packages: write
-    steps:
-      - name: Delete old dev versions
-        uses: actions/delete-package-versions@v5
-        with:
-          package-name: parka-data-boundary
-          package-type: container
-          owner: teamraincoat
-          min-versions-to-keep: 40
-          delete-only-pre-release-versions: true
