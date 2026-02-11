@@ -1,6 +1,8 @@
 name: Publish
 
 on:
+  push:
+    tags: ["[0-9]+.[0-9]+.[0-9]+"]
   workflow_run:
     workflows: ["CI"]
     types: [completed]
@@ -9,7 +11,9 @@ on:
 jobs:
   build:
     name: Build wheel
-    if: github.event.workflow_run.conclusion == 'success'
+    if: >-
+      github.event_name == 'push' ||
+      github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -55,7 +59,7 @@ jobs:
           TWINE_USERNAME: __token__
           TWINE_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
           TWINE_REPOSITORY_URL: https://pypi.raincoat.dev/ghcr.io/teamraincoat/
-        run: twine upload dist/*
+        run: twine upload --skip-existing dist/*
 
   cleanup:
     name: Clean up old dev versions
