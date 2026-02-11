@@ -45,4 +45,4 @@ jobs:
         run: pip install -e ".[ci]"
 
       - name: Run tests
-        run: pytest
+        run: pytest || [ $? -eq 5 ]  # exit 5 = no tests collected (data-only package)
