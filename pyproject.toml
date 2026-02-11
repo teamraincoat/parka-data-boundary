@@ -4,8 +4,33 @@ build-backend = "setuptools.build_meta"
 
 [tool.setuptools_scm]
 
-[tool.cruft]
-skip = ["setup.cfg"]
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[project]
+name = "parka-data-boundary"
+description = "Raincoat parka-data-boundary"
+authors = [
+    { name = "Raincoat Insurance, Inc.", email = "support@teamraincoat.com" }
+]
+readme = "README.md"
+dynamic = ["version"]
+keywords = ["raincoat", "parka", "data", "boundary"]
+
+[project.optional-dependencies]
+dev = []
+all = ["parka-data-boundary[dev]"]
+
+[tool.pytest.ini_options]
+addopts = "-ra --quiet --color=no"
+python_files = ["test_*.py", "*_test.py", "tests/*.py"]
+python_functions = ["test_*", "*_test"]
+markers = [
+    "slow: slow marker",
+]
 
 [tool.ruff]
 line-length = 120
@@ -15,3 +40,10 @@ extend-select = []
 
 [tool.ruff.lint.pydocstyle]
 convention = "numpy"
+
+[tool.uv]
+publish-url = "https://pypi.raincoat.dev/ghcr.io/teamraincoat/"
+
+[[tool.uv.index]]
+name = "raincoat"
+url = "https://pypi.raincoat.dev/ghcr.io/teamraincoat/simple/"
