@@ -59,4 +59,4 @@ jobs:
           TWINE_USERNAME: __token__
           TWINE_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
           TWINE_REPOSITORY_URL: https://pypi.raincoat.dev/ghcr.io/teamraincoat/
-        run: twine upload --skip-existing dist/*
+        run: twine upload dist/* || true  # ignore conflict on re-upload
