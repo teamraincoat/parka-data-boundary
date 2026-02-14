@@ -1,0 +1,45 @@
+github_repo: "raincoatinc/parka-data-boundary"
+
+assets:
+  region-ar:
+    path: "data/boundary/region/ar"
+    extract_to: "region/ar"
+  region-bo:
+    path: "data/boundary/region/bo"
+    extract_to: "region/bo"
+  region-br:
+    path: "data/boundary/region/br"
+    extract_to: "region/br"
+  region-co:
+    path: "data/boundary/region/co"
+    extract_to: "region/co"
+  region-do:
+    path: "data/boundary/region/do"
+    extract_to: "region/do"
+  region-gy:
+    path: "data/boundary/region/gy"
+    extract_to: "region/gy"
+  region-kg:
+    path: "data/boundary/region/kg"
+    extract_to: "region/kg"
+  region-mx:
+    path: "data/boundary/region/mx"
+    extract_to: "region/mx"
+  region-pa:
+    path: "data/boundary/region/pa"
+    extract_to: "region/pa"
+  region-pr:
+    path: "data/boundary/region/pr"
+    extract_to: "region/pr"
+  region-tj:
+    path: "data/boundary/region/tj"
+    extract_to: "region/tj"
+  naturalearth-v4.1.0:
+    path: "data/boundary/naturalearth/v4.1.0"
+    extract_to: "naturalearth/v4.1.0"
+  naturalearth-v5.0.0:
+    path: "data/boundary/naturalearth/v5.0.0"
+    extract_to: "naturalearth/v5.0.0"
+  naturalearth-v5.1.2:
+    path: "data/boundary/naturalearth/v5.1.2"
+    extract_to: "naturalearth/v5.1.2"

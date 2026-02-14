@@ -1,0 +1,47 @@
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+
+jobs:
+  release:
+    name: Build assets and publish
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      packages: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          lfs: true
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install build tools
+        run: pip install build setuptools setuptools-scm pyyaml
+
+      - name: Build assets and generate manifest
+        run: python -m parka_data_boundary.packaging build --tag ${{ github.ref_name }} --output assets/
+        env:
+          PYTHONPATH: src
+
+      - name: Build wheel
+        run: python -m build
+
+      - name: Create GitHub Release with assets
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh release create ${{ github.ref_name }} assets/*.tar.gz --generate-notes
+
+      - name: Publish wheel to GitHub Packages
+        env:
+          TWINE_USERNAME: __token__
+          TWINE_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
+          TWINE_REPOSITORY_URL: https://pypi.raincoat.dev/ghcr.io/teamraincoat/
+        run: |
+          pip install twine
+          twine upload dist/*.whl || true

@@ -1,0 +1,90 @@
+{
+  "github_repo": "raincoatinc/parka-data-boundary",
+  "release_tag": "v0.2.0",
+  "assets": {
+    "region-ar": {
+      "file": "region-ar.tar.gz",
+      "sha256": "11d90ffda5fb3e8fb4cf63df5a4f2f2c44587d19acf204fc5c9679ee83b97c9b",
+      "size": 41194612,
+      "extract_to": "region/ar"
+    },
+    "region-bo": {
+      "file": "region-bo.tar.gz",
+      "sha256": "733ce1d2c88cb03be3eeeae528841514edfdaad9bf4fe7128fe1a6873f7fd014",
+      "size": 23313467,
+      "extract_to": "region/bo"
+    },
+    "region-br": {
+      "file": "region-br.tar.gz",
+      "sha256": "db7dce4c63f061f825620c3a4c0a8ecca42ebed03b5e303afd29a91374f048fc",
+      "size": 16680467,
+      "extract_to": "region/br"
+    },
+    "region-co": {
+      "file": "region-co.tar.gz",
+      "sha256": "db2e99afdf9d2507402fcc64ebbcffa9c0bd1c2ca5c3b7c24d2d6d5bc0084437",
+      "size": 67719165,
+      "extract_to": "region/co"
+    },
+    "region-do": {
+      "file": "region-do.tar.gz",
+      "sha256": "0e62da1f79218f4847ea492fd98052c790dc712dff0f0f9d9e75a8a0b91a7ee1",
+      "size": 25111681,
+      "extract_to": "region/do"
+    },
+    "region-gy": {
+      "file": "region-gy.tar.gz",
+      "sha256": "0a4c0d974cc90308220a86464ef3b12ca345bc546591842e22cfececacc595e9",
+      "size": 228689,
+      "extract_to": "region/gy"
+    },
+    "region-kg": {
+      "file": "region-kg.tar.gz",
+      "sha256": "16288153028e1e1b91de57599d4c0d3a7c0936e7a3c0bdeb8adb205bc33d78d7",
+      "size": 6041242,
+      "extract_to": "region/kg"
+    },
+    "region-mx": {
+      "file": "region-mx.tar.gz",
+      "sha256": "81bf1437f9fdee91db75c123cb90bee31dbf7d302258c12ce77355fe6f0bab73",
+      "size": 41458698,
+      "extract_to": "region/mx"
+    },
+    "region-pa": {
+      "file": "region-pa.tar.gz",
+      "sha256": "b21de745233aeffabde8552e1a00b592991cbc7fdc86be8f8ad3ec2b2a89fd9d",
+      "size": 7196380,
+      "extract_to": "region/pa"
+    },
+    "region-pr": {
+      "file": "region-pr.tar.gz",
+      "sha256": "884b00984e55c270c9e495cae963e220d451a795d8d6e65d18d50efab2f1f439",
+      "size": 513978,
+      "extract_to": "region/pr"
+    },
+    "region-tj": {
+      "file": "region-tj.tar.gz",
+      "sha256": "78e58690488e4824eeee2de7c751879432afec8aeba745adf9f866af3ac5efc6",
+      "size": 1749587,
+      "extract_to": "region/tj"
+    },
+    "naturalearth-v4.1.0": {
+      "file": "naturalearth-v4.1.0.tar.gz",
+      "sha256": "85b19d7b45024e3f59f7073e75643f939a44285e0ab8156b0bfc91113f450adb",
+      "size": 19786494,
+      "extract_to": "naturalearth/v4.1.0"
+    },
+    "naturalearth-v5.0.0": {
+      "file": "naturalearth-v5.0.0.tar.gz",
+      "sha256": "13716c44c4de2e06cdaf41896754ebe3edbdb6e2828dde03ac0251c42d4fcf0f",
+      "size": 20057981,
+      "extract_to": "naturalearth/v5.0.0"
+    },
+    "naturalearth-v5.1.2": {
+      "file": "naturalearth-v5.1.2.tar.gz",
+      "sha256": "6e2ee493397b376ca179e5b68fca572f477032bc23c21839f595541b0a2b9d50",
+      "size": 20072234,
+      "extract_to": "naturalearth/v5.1.2"
+    }
+  }
+}

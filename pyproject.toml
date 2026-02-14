@@ -10,15 +10,22 @@ include-package-data = true
 [tool.setuptools.packages.find]
 where = ["src"]
 
+[tool.setuptools.package-data]
+"parka_data_boundary" = ["manifest.json"]
+
 [project]
 name = "parka-data-boundary"
-description = "Raincoat parka-data-boundary"
+description = "Raincoat parka-data-boundary — thin manifest package for lazy-loaded boundary data"
 authors = [
     { name = "Raincoat Insurance, Inc.", email = "support@teamraincoat.com" }
 ]
 readme = "README.md"
 dynamic = ["version"]
 keywords = ["raincoat", "parka", "data", "boundary"]
+dependencies = [
+    "importlib_metadata",
+    "pyyaml",
+]
 
 [project.optional-dependencies]
 dev = []
