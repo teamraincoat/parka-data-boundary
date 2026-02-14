@@ -29,8 +29,8 @@ jobs:
         env:
           PYTHONPATH: src
 
-      - name: Build wheel
-        run: python -m build
+      - name: Build wheel (uses CI-generated manifest.json)
+        run: python -m build --wheel
 
       - name: Create GitHub Release with assets
         env:
