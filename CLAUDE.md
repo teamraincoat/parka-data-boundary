@@ -4,64 +4,43 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a Python data package (`parka-data-boundary`) that provides geographic boundary data files for the Raincoat/Parka system. It's a pure data distribution package that includes:
+`parka-data-boundary` is a thin manifest package for geographic boundary data. The actual data files are packaged as GitHub Release assets and downloaded on-demand by the `parka` library.
 
-- Natural Earth boundary data (countries and states/provinces) in SQLite format across multiple versions (v4.1.0, v5.0.0, v5.1.2)
-- Regional administrative boundary data for various countries including Latin America and Central Asia (Argentina, Bolivia, Brazil, Colombia, Dominican Republic, Guyana, Kyrgyzstan, Mexico, Panama, Puerto Rico, Tajikistan)
+### Data included
+
+- **Natural Earth** boundary data (countries and states/provinces) in SQLite format — versions v4.1.0, v5.0.0, v5.1.2
+- **Regional administrative boundaries** for: Argentina, Bolivia, Brazil, Colombia, Dominican Republic, Guyana, Kyrgyzstan, Mexico, Panama, Puerto Rico, Tajikistan
 
 ## Architecture
 
-The package is structured as a setuptools-based Python package with the primary purpose of distributing geographic data files:
-
-- `src/parka_data_boundary/`: Minimal Python package code (just version handling)
-- `data/boundary/`: Core data files organized by source and region
-  - `naturalearth/`: Natural Earth vector data in SQLite format by version
-  - `region/`: Country-specific administrative boundary data as ZIP files
-- `setup.py`: Custom data file packaging logic that maps `data//boundary/**/*.*` to `share/parka/`
+- `assets.yaml` — declarative registry of all boundary datasets (source paths, extract targets)
+- `src/parka_data_boundary/` — thin Python package exposing `get_manifest()` with checksums, sizes, download URLs
+- `src/parka_data_boundary/packaging.py` — CLI to build `.tar.gz` archives and generate `manifest.json`
+- `data/boundary/` — source data files (region shapefiles, Natural Earth SQLite)
+- `.github/workflows/release.yml` — tag push → build assets → GitHub Release + wheel
 
 ## Development Commands
 
-### Setup and Installation
 ```bash
-pip install -e .
+pip install -e .                    # Install in dev mode
+ruff check . && ruff format .       # Lint and format
+pytest                              # Run tests
 ```
 
-### Code Quality
+### Building assets locally
+
 ```bash
-ruff check .          # Lint code
-ruff format .         # Format code
+PYTHONPATH=src python -m parka_data_boundary.packaging build --tag v0.2.0 --output dist/
 ```
 
-### Testing
-```bash
-pytest                # Run tests (basic pytest configuration present)
-```
+### Adding new boundary data
 
-### Build and Distribution
-```bash
-python -m build --wheel           # Build wheel package
-./deploy/upload.sh               # Upload to GitLab package registry
-```
+1. Place files in `data/boundary/region/{country_code}/` or `data/boundary/naturalearth/v{version}/`
+2. Add an entry to `assets.yaml`
+3. Tag a new release — CI builds the archives and publishes them
 
 ## Key Configuration
 
-- **Ruff**: Configured for 120 character line length with numpy docstring convention
+- **Ruff**: 120 character line length, numpy docstring convention
 - **Setuptools**: Uses `setuptools_scm` for version management
-- **Data Files**: Custom setup.py logic handles recursive data file inclusion from `data//boundary/` to `share/parka/`
-- **Package Registry**: Configured to use GitLab package registry at `https://gitlab.com/api/v4/projects/20210002/packages/pypi/simple`
-
-## Working with Data Files
-
-The package's main functionality is data distribution. When adding new boundary data:
-
-1. Place files in appropriate subdirectories under `data/boundary/`
-2. Natural Earth data goes in `data/boundary/naturalearth/[version]/`
-3. Regional data goes in `data/boundary/region/[country_code]/`
-4. The custom `setup.py` will automatically include them in the package
-
-## Development Notes
-
-- This is primarily a data package with minimal Python code
-- The main technical complexity is in the data file packaging logic in `setup.py`
-- Version management is handled automatically by `setuptools_scm`
-- The package is designed for installation via pip from a private GitLab registry
+- **Manifest**: `manifest.json` is generated at build time and shipped in the wheel
