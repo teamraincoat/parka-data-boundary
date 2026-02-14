@@ -1,8 +1,12 @@
 import json
-from importlib.metadata import version
 from pathlib import Path
 
-__version__ = version("parka-data-boundary")
+try:
+    from importlib.metadata import version
+
+    __version__ = version("parka-data-boundary")
+except Exception:
+    __version__ = "0.0.0"
 
 
 def get_manifest() -> dict:
