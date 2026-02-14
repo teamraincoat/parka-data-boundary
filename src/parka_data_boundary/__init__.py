@@ -1,5 +1,5 @@
 import json
-from importlib_metadata import version
+from importlib.metadata import version
 from pathlib import Path
 
 __version__ = version("parka-data-boundary")

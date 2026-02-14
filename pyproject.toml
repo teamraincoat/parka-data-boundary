@@ -22,8 +22,8 @@ authors = [
 readme = "README.md"
 dynamic = ["version"]
 keywords = ["raincoat", "parka", "data", "boundary"]
+requires-python = ">= 3.12"
 dependencies = [
-    "importlib_metadata",
     "pyyaml",
 ]
 
