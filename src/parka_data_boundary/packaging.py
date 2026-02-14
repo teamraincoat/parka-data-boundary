@@ -33,13 +33,21 @@ def _sha256_file(path: Path) -> str:
 
 
 def _build_tarball(name: str, source_dir: Path, output_dir: Path) -> tuple[Path, str, int]:
-    """Create a .tar.gz from *source_dir* and return (path, sha256, size)."""
+    """Create a reproducible .tar.gz from *source_dir* and return (path, sha256, size)."""
+    import gzip
+
     archive_path = output_dir / f"{name}.tar.gz"
-    with tarfile.open(archive_path, "w:gz") as tf:
-        for item in sorted(source_dir.rglob("*")):
-            if item.is_file():
-                arcname = str(item.relative_to(source_dir))
-                tf.add(item, arcname=arcname)
+    with gzip.GzipFile(archive_path, "wb", mtime=0) as gz:
+        with tarfile.open(fileobj=gz, mode="w") as tf:
+            for item in sorted(source_dir.rglob("*")):
+                if item.is_file():
+                    arcname = str(item.relative_to(source_dir))
+                    info = tf.gettarinfo(str(item), arcname=arcname)
+                    info.uid = info.gid = 0
+                    info.uname = info.gname = ""
+                    info.mtime = 0
+                    with open(item, "rb") as fh:
+                        tf.addfile(info, fh)
     sha = _sha256_file(archive_path)
     size = archive_path.stat().st_size
     return archive_path, sha, size

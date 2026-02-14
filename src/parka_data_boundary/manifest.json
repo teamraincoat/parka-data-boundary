@@ -4,86 +4,86 @@
   "assets": {
     "region-ar": {
       "file": "region-ar.tar.gz",
-      "sha256": "11d90ffda5fb3e8fb4cf63df5a4f2f2c44587d19acf204fc5c9679ee83b97c9b",
-      "size": 41194612,
+      "sha256": "885bdbd7b3ab42965ffca81fdc2084d752677e8b556d7c9856b7bcf6503abb1b",
+      "size": 41194419,
       "extract_to": "region/ar"
     },
     "region-bo": {
       "file": "region-bo.tar.gz",
-      "sha256": "733ce1d2c88cb03be3eeeae528841514edfdaad9bf4fe7128fe1a6873f7fd014",
-      "size": 23313467,
+      "sha256": "ce98ba56f10d4b3e067adc1cc68c8a8199ba29b42d94dc942830d827d9315f32",
+      "size": 23313379,
       "extract_to": "region/bo"
     },
     "region-br": {
       "file": "region-br.tar.gz",
-      "sha256": "db7dce4c63f061f825620c3a4c0a8ecca42ebed03b5e303afd29a91374f048fc",
-      "size": 16680467,
+      "sha256": "2aec64f246eb4020d119b5526b854bf858053c5902b6ec716d78c5fd9321d628",
+      "size": 16680306,
       "extract_to": "region/br"
     },
     "region-co": {
       "file": "region-co.tar.gz",
-      "sha256": "db2e99afdf9d2507402fcc64ebbcffa9c0bd1c2ca5c3b7c24d2d6d5bc0084437",
-      "size": 67719165,
+      "sha256": "880aec85f918606a01d3d4a94f8a879ec00094d203fc664c5b2b81fa0c7f01ef",
+      "size": 67718883,
       "extract_to": "region/co"
     },
     "region-do": {
       "file": "region-do.tar.gz",
-      "sha256": "0e62da1f79218f4847ea492fd98052c790dc712dff0f0f9d9e75a8a0b91a7ee1",
-      "size": 25111681,
+      "sha256": "428511b243e3b29f8fab8813547cc75a67f724eb05abcc3d0abe24182819ca9a",
+      "size": 25111524,
       "extract_to": "region/do"
     },
     "region-gy": {
       "file": "region-gy.tar.gz",
-      "sha256": "0a4c0d974cc90308220a86464ef3b12ca345bc546591842e22cfececacc595e9",
-      "size": 228689,
+      "sha256": "5b797041efc8e5c7b3ea684e3cac6b182f280a7795c9e84cf378ac19252ae8f2",
+      "size": 228592,
       "extract_to": "region/gy"
     },
     "region-kg": {
       "file": "region-kg.tar.gz",
-      "sha256": "16288153028e1e1b91de57599d4c0d3a7c0936e7a3c0bdeb8adb205bc33d78d7",
-      "size": 6041242,
+      "sha256": "d2558ca4cd4b11e7e1d81cea62f6d863e4fb6d5d79b65f58f430e0e59386dbd8",
+      "size": 6041124,
       "extract_to": "region/kg"
     },
     "region-mx": {
       "file": "region-mx.tar.gz",
-      "sha256": "81bf1437f9fdee91db75c123cb90bee31dbf7d302258c12ce77355fe6f0bab73",
-      "size": 41458698,
+      "sha256": "aaa74859c673e11e766c851445232afd9b69df6ec6e50a0064a931a647a38962",
+      "size": 41458612,
       "extract_to": "region/mx"
     },
     "region-pa": {
       "file": "region-pa.tar.gz",
-      "sha256": "b21de745233aeffabde8552e1a00b592991cbc7fdc86be8f8ad3ec2b2a89fd9d",
-      "size": 7196380,
+      "sha256": "123ee85cda5bbd2a9358ea925862e5a38fa16557291cebb428dc02ac401646dc",
+      "size": 7196245,
       "extract_to": "region/pa"
     },
     "region-pr": {
       "file": "region-pr.tar.gz",
-      "sha256": "884b00984e55c270c9e495cae963e220d451a795d8d6e65d18d50efab2f1f439",
-      "size": 513978,
+      "sha256": "1067a4e97df58b88b9c52a3fec9a280fa19c810893a2cb4876f04ee52ca5b18d",
+      "size": 513774,
       "extract_to": "region/pr"
     },
     "region-tj": {
       "file": "region-tj.tar.gz",
-      "sha256": "78e58690488e4824eeee2de7c751879432afec8aeba745adf9f866af3ac5efc6",
-      "size": 1749587,
+      "sha256": "7389afe398e7d02279c5ad3c0a16ef2f5d76569f282342bf1cfff214ec6582e1",
+      "size": 1749487,
       "extract_to": "region/tj"
     },
     "naturalearth-v4.1.0": {
       "file": "naturalearth-v4.1.0.tar.gz",
-      "sha256": "85b19d7b45024e3f59f7073e75643f939a44285e0ab8156b0bfc91113f450adb",
-      "size": 19786494,
+      "sha256": "c9e6c042b603f364b2c4b4faab68572f0a98597bdedfc59fd05573d9845c7121",
+      "size": 19786134,
       "extract_to": "naturalearth/v4.1.0"
     },
     "naturalearth-v5.0.0": {
       "file": "naturalearth-v5.0.0.tar.gz",
-      "sha256": "13716c44c4de2e06cdaf41896754ebe3edbdb6e2828dde03ac0251c42d4fcf0f",
-      "size": 20057981,
+      "sha256": "4de60198fb459a3df8fcbe4713f35b63a12b5fe4db051b9f24bdf3754af16347",
+      "size": 20057506,
       "extract_to": "naturalearth/v5.0.0"
     },
     "naturalearth-v5.1.2": {
       "file": "naturalearth-v5.1.2.tar.gz",
-      "sha256": "6e2ee493397b376ca179e5b68fca572f477032bc23c21839f595541b0a2b9d50",
-      "size": 20072234,
+      "sha256": "cf3508826c6c46e16cfb37972a34c3e46d59dd4858794ce55b1d642d123b7107",
+      "size": 20072298,
       "extract_to": "naturalearth/v5.1.2"
     }
   }
